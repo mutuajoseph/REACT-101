@@ -63,3 +63,25 @@ export const addUser = async (userDetails) => {
         console.error("Error adding user:", error);
     }
 }
+
+// delete a user 
+export const deleteUser =  async (userId) => {
+  try {
+    const response = await fetch(`${BASE_URL}/users/${userId}`, {
+        method: "DELETE", 
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    return true;
+  } catch (error) {
+    console.error("Error deleting user:", error);
+  }
+} 
+
+// update a user 

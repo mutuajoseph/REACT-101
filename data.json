@@ -11,12 +11,6 @@
       "name": "Jane Smith",
       "email": "jane@example.com",
       "role": "Backend Developer"
-    },
-    {
-      "name": "Mark Doe",
-      "id": "_y4XOg53wx8",
-      "email": "mark doe@example.com",
-      "role": "Frontend Developer"
     }
   ],
   "posts": [
