@@ -1,24 +1,13 @@
-import { useRef, useState, useEffect} from "react";
-import { fetchPostsData } from "../../services";
+import { useRef} from "react";
+import { useContext } from "react";
+import { postContext } from "../context/post/postContext";
+
 
 export const Posts = () => {
 
- const [postList, setPostList] = useState([]);
- const [loading, setLoading] = useState(false);
+  const [postList, loading, setPostList] = useContext(postContext)
 
- const newPostRef = useRef("");
-
- useEffect(() => {
-
-    // fetch posts data
-    const fetchPosts = async () => {
-        setLoading(true);
-        const posts = await fetchPostsData();
-        setPostList(posts);
-        setLoading(false);
-      };
-    fetchPosts();
-  }, []);
+  const newPostRef = useRef("");
 
   const handleSubmitPostRef = (event) => {
     event.preventDefault();

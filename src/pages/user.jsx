@@ -1,23 +1,13 @@
-import { useRef, useState, useEffect } from "react";
-import { fetchUserData, addUser } from "../../services";
+import { useRef } from "react";
+import { addUser } from "../../services";
 import User from "../components/User";
+import { useContext } from "react";
+import { userContext } from "../context/user/userContext";
 
 export const Users = () => {
- const [userList, setUserList] = useState([]);
- const [loading, setLoading] = useState(false);
- const newNameRef = useRef("");
-
- useEffect(() => {
-    // fetch user data
-    const fetchUsers = async () => {
-        setLoading(true);
-        const users = await fetchUserData();
-        setUserList(users);
-        setLoading(false);
-      };
-    fetchUsers();
-  }, []);
-
+ 
+  const newNameRef = useRef("");
+  const [userList, loading, setUserList] = useContext(userContext);
 
   const handleSubmitRef = (event) => {
     event.preventDefault();

@@ -1,6 +1,6 @@
 // create a a function that uses fetch to fetch user data 
 
-const BASE_URL = "http://localhost:3000"
+const BASE_URL = "http://localhost:8000"
 
 export const fetchUserData = async () => {
   try {
